@@ -1,24 +1,26 @@
 export const pageAnimation = {
-  hidden: {
-    opacity: 0,
-    y: 300,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      when: "beforeChildern",
-      staggerChildern: 0.25,
+  animate: (staggerChildern = 0.9 , duration = 1)=>({
+    hidden: {
+      opacity: 0,
+      y: 300,
     },
-  },
-  exit: {
-    opacity: 0,
-    y: 300,
-    transition: {
-      duration: 1,
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration,
+        when: "beforeChildern",
+        staggerChildern,
+      },
     },
-  },
+    exit: {
+      opacity: 0,
+      y: 300,
+      transition: {
+        duration: 1,
+      },
+    },
+  })
 };
 
 export const titleAnim = {
